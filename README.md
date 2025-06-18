@@ -39,4 +39,3 @@ A full-stack web application that clones the Apollo247 doctor listing functional
 ```bash
 git clone <repository-url>
 cd apollo247-clone
-# apollo-clone

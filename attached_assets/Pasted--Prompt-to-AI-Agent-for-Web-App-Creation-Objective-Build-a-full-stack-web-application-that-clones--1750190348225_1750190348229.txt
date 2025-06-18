@@ -1,0 +1,123 @@
+ Prompt to AI Agent for Web App Creation
+Objective: Build a full-stack web application that clones the destination page from Apollo247:
+
+Reference Page: https://www.apollo247.com/specialties/general-physician-internal-medicine
+
+🔷 Frontend Instructions
+Framework: Use Next.js (latest version).
+
+SEO: Implement off-page SEO only for the destination page using:
+
+Meta tags
+
+Structured data (JSON-LD)
+
+Server-side rendering (getServerSideProps) or static generation (getStaticProps) for the page.
+
+Pages to Include:
+Only one fully functional page:
+
+/doctors/general-physician-internal-medicine
+
+Functional Components:
+
+Doctor Listing (from API)
+
+Functional Filters (Specialty, City, Gender, etc. — take reference from Apollo247)
+
+Pagination (should work correctly with the backend)
+
+Static / Dummy Components (No Click Logic Required):
+
+Header
+
+Sidebar links
+
+Sort dropdown
+
+Appointment buttons, etc.
+
+Design/UI:
+Use styles and layout closely resembling Apollo247's UI/UX.
+
+🔷 Backend Instructions
+Tech Stack: Use Node.js with Express.js, OR a full TypeScript setup with tRPC/NestJS if advanced logic is required.
+
+Database: MongoDB Atlas
+Database URL (Connect URI):
+mongodb+srv://sahilgaikwad1238696:wFs0WwVtyg2UsrEi@cluster0.eda3emk.mongodb.net/
+
+🔷 Backend API Requirements
+Create only two endpoints:
+
+POST /api/add-doctor
+
+Accepts doctor details (name, specialty, experience, city, gender, etc.)
+
+Saves doctor record in MongoDB
+
+Must validate input fields
+
+GET /api/list-doctor-with-filter
+
+Supports filters:
+
+Specialty
+
+City
+
+Gender
+
+Experience range (optional)
+
+Must support:
+
+Pagination: Accept page, limit
+
+Sorting (optional: by experience or name)
+
+Returns paginated doctor list as JSON
+
+Data Schema Example (MongoDB Collection):
+
+json
+Copy
+Edit
+{
+  "name": "Dr. Sahil Gaikwad",
+  "specialty": "General Physician",
+  "gender": "Male",
+  "city": "Pune",
+  "experience": 10,
+  "rating": 4.5,
+  "image": "https://cdn.example.com/doctor1.png"
+}
+🔷 Additional Requirements
+Use Axios or fetch on frontend to call REST APIs.
+
+Ensure filters are reactive on frontend and only affect the listing (no page reload).
+
+Pagination should allow navigation between pages and fetch from backend accordingly.
+
+Code should be modular and clean.
+
+Use .env.local to store sensitive data like the MongoDB URI.
+
+✅ Deliverables
+Fully working Next.js project with:
+
+Pages: /doctors/general-physician-internal-medicine
+
+SEO applied to the page
+
+Functional filters and pagination
+
+Backend service with:
+
+Working MongoDB Atlas integration
+
+/add-doctor and /list-doctor-with-filter endpoints
+
+README with setup instructions
+
+.env.example file
